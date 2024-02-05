@@ -1,5 +1,6 @@
 <template>
     <button type="button" @click="onClickAge">Update age</button>
+    <button type="button" @click="ageChangeFN(3)">Update age CB</button>
     <p>The user is {{ age }} years old</p>
     <p>{{ ageDoubled }}</p>
 </template>
@@ -15,7 +16,8 @@
                 validator(value) {
                     return value < 130;
                 }
-            }
+            },
+            ageChangeFN: Function
         },
         /*
 

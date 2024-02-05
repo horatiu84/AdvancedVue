@@ -20,7 +20,7 @@
   In this example, the "User" component is listening for the "age-change" event from 
   the parent component, which means that the "updateAge" method will be executed whenever 
   the parent component changes the value of the "age" prop.-->
- <user :age="age"  @age-change="updateAge"  ></user>
+ <user :age="age"  @age-change="updateAge" :ageChangeFn="updateAgeCB" ></user>
 
 </template>
 
@@ -43,7 +43,11 @@ export default {
   methods: {
     updateAge(num) {
       this.age += num;
+    },
+    updateAgeCB(num){
+      this.age += num;
     }
+
   },
   watch: {
     age(newAge) {
